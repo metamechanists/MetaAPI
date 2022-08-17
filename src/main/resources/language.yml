@@ -1,0 +1,10 @@
+quest:
+  complete_quest: "&aYou have Completed the {quest} Quest!"
+  unlock_quest: "&aYou have Unlocked a New Quest!"
+  reward:
+    no_inventory_space: "&cYou didn't have space in your inventory! The quest reward has been dropped on the ground at your location."
+
+general:
+  plugin_color: "&x&7&7&1&6&4&5"
+  prefix: "{plugin_color}[MetaAPI]&f: "
+  data_saved: "&aData saved!"

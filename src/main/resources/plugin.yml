@@ -1,0 +1,15 @@
+name: MetaAPI
+version: 0.1
+main: org.metamechanists.MetaAPI
+api-version: 1.18
+depend: [Slimefun]
+
+commands:
+  MetaAPI:
+    description: /MetaAPI
+    usage: /MetaAPI <sub>
+
+permissions:
+  MetaAPI.*:
+    default: op
+    description: Gives access to All MetaAPI commands
