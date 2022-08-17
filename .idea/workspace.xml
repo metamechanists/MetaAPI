@@ -4,12 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="" />
+    <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/MetaAPI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/MetaAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/MetaAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/config/ConfigUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/config/ConfigUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/config/ResourceLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/config/ResourceLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/Quests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/Quests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/quests/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/quests/Quest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/quests/QuestStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/quests/QuestStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/quests/Requirement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/quests/Requirement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/quests/Reward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/quests/Reward.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/quests/requirements/BreakBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/quests/requirements/BreakBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/quests/requirements/Craft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/quests/requirements/Craft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/quests/requirements/ExecuteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/quests/requirements/ExecuteCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/quests/requirements/KillMob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/quests/requirements/KillMob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/quests/requirements/MultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/quests/requirements/MultiBlockCraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/quests/requirements/PlaceBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/quests/requirements/PlaceBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/quests/rewards/GiveItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/quests/rewards/GiveItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/quests/rewards/RunCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/quests/rewards/RunCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/listeners/quests/OnBlockInteract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/quests/OnBlockInteract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/listeners/quests/OnKillMob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/quests/OnKillMob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/listeners/quests/OnMultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/quests/OnMultiBlockCraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/listeners/quests/OnPlayerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/quests/OnPlayerCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/listeners/quests/OnPlayerCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/quests/OnPlayerCraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/listeners/quests/OnPlayerJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/quests/OnPlayerJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/ItemUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/util/ItemUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/util/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/NumberUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/util/NumberUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/PluginStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/util/PluginStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/TextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/util/TextUtil.java" afterDir="false" />
+    </list>
     <list id="f6e02cfa-d320-4114-a477-98c5cf060289" name="Changes by JustAHuman" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,29 +66,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "/home/idra/GitHub/MetaAPI",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/idra/GitHub/MetaAPI&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.metamechanists.metaapi.listeners" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
