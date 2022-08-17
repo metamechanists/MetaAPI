@@ -1,44 +1,45 @@
 package org.metamechanists;
 
-import org.bukkit.event.Listener;
+import lombok.Getter;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 import org.metamechanists.config.Config;
 import org.metamechanists.config.ResourceLoader;
-import org.metamechanists.listeners.ListenerManager;
+import org.metamechanists.listeners.quests.OnBlockInteract;
+import org.metamechanists.listeners.quests.OnKillMob;
+import org.metamechanists.listeners.quests.OnMultiBlockCraft;
+import org.metamechanists.listeners.quests.OnPlayerCommand;
+import org.metamechanists.listeners.quests.OnPlayerCraft;
+import org.metamechanists.listeners.quests.OnPlayerJoin;
+import org.metamechanists.util.Log;
+import org.metamechanists.util.PluginStorage;
+import org.metamechanists.util.TextUtil;
 
 
 @SuppressWarnings("unused")
-public class MetaAPI extends JavaPlugin implements Listener {
+public class MetaAPI {
 
-    private static MetaAPI instance;
+    @Getter
+    public static JavaPlugin instance;
 
-    private ListenerManager listenerManager;
-
-    public static PluginManager getPluginManager() {
-        return instance.getServer().getPluginManager();
-    }
-
-    @Override
-    public void onEnable() {
+    public static void initialize(JavaPlugin plugin) {
+        instance = plugin;
+        PluginStorage.initialize(instance);
+        Log.initialize();
         ResourceLoader.initialize();
         Config.initialize();
+        TextUtil.initialise();
+        addTaskListeners();
     }
 
-    @Override
-    public void onDisable() {
+    public static void addTaskListeners() {
+        PluginManager manager = instance.getServer().getPluginManager();
 
-    }
-
-    public static MetaAPI getInstance() {
-        return instance;
-    }
-
-    public static ListenerManager getListenerManager() {
-        return instance.listenerManager;
+        manager.registerEvents(new OnBlockInteract(), instance);
+        manager.registerEvents(new OnKillMob(), instance);
+        manager.registerEvents(new OnMultiBlockCraft(), instance);
+        manager.registerEvents(new OnPlayerCommand(), instance);
+        manager.registerEvents(new OnPlayerCraft(), instance);
+        manager.registerEvents(new OnPlayerJoin(), instance);
     }
 }

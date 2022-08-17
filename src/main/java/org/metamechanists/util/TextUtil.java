@@ -5,7 +5,6 @@ import org.bukkit.entity.Player;
 import org.metamechanists.config.ConfigUtil;
 import org.metamechanists.config.ResourceLoader;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 

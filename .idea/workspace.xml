@@ -4,14 +4,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="" />
+    <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/MetaAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/MetaAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/config/ConfigUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/config/ConfigUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/RegisteredItems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/implementation/Texture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/Drop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/ItemUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/ItemUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/PluginStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/PluginStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/TextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/TextUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/language.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" />
+    </list>
+    <list id="f6e02cfa-d320-4114-a477-98c5cf060289" name="Changes by JustAHuman" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/MetaAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/MetaAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/listeners/ListenerManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/ItemUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/ItemUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/PluginStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/util/PluginStorage.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/MetaAPI" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/util/PluginStorage.java">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="2" changelist="f6e02cfa-d320-4114-a477-98c5cf060289" />
+        <range start1="8" end1="9" start2="7" end2="7" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="12" end1="13" start2="10" end2="10" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="18" end1="22" start2="15" end2="15" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/util/ItemUtil.java">
+      <ranges>
+        <range start1="2" end1="5" start2="2" end2="2" changelist="f6e02cfa-d320-4114-a477-98c5cf060289" />
+        <range start1="7" end1="9" start2="4" end2="4" changelist="f6e02cfa-d320-4114-a477-98c5cf060289" />
+        <range start1="11" end1="13" start2="6" end2="6" changelist="f6e02cfa-d320-4114-a477-98c5cf060289" />
+        <range start1="16" end1="64" start2="9" end2="9" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/MetaAPI.java">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="3" changelist="f6e02cfa-d320-4114-a477-98c5cf060289" />
+        <range start1="5" end1="9" start2="5" end2="5" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="11" end1="12" start2="7" end2="16" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="15" end1="16" start2="19" end2="20" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="17" end1="18" start2="21" end2="23" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="19" end1="20" start2="24" end2="33" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="21" end1="23" start2="34" end2="43" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="24" end1="43" start2="44" end2="44" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -38,7 +88,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "/home/idra/GitHub/MMOP",
+    "last_opened_file_path": "/home/idra/GitHub/MetaCore",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>

@@ -23,20 +23,4 @@ public class Log {
     public static void missingKeyError(String configName, ConfigurationSection section, String key) {
         warning(configName + "." + section.getCurrentPath() + " missing '" + key + "'");
     }
-
-    public static void mustBeOneCharacter(String configName, ConfigurationSection section, String key) {
-        warning(configName + "." + section.getCurrentPath() + "." + key + " must be one character");
-    }
-
-    public static void invalidType(String configName, ConfigurationSection section, String key, String type) {
-        warning(configName + "." + section.getCurrentPath() + "." + key + " specifies invalid type '" + type + "'");
-    }
-
-    public static void invalidStage(String stage) {
-        warning("Invalid stage '" + stage + "'");
-    }
-
-    public static void invalidId(String id) {
-        warning("Invalid ID '" + id + "'");
-    }
 }
