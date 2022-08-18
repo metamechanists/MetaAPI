@@ -3,6 +3,7 @@ package org.metamechanists.metaapi;
 import lombok.Getter;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
 import org.metamechanists.metaapi.config.Config;
 import org.metamechanists.metaapi.config.ResourceLoader;
 import org.metamechanists.metaapi.listeners.quests.OnBlockInteract;
@@ -14,7 +15,6 @@ import org.metamechanists.metaapi.listeners.quests.OnPlayerJoin;
 import org.metamechanists.metaapi.util.Log;
 import org.metamechanists.metaapi.util.PluginStorage;
 import org.metamechanists.metaapi.util.TextUtil;
-
 
 @SuppressWarnings("unused")
 public class MetaAPI {
