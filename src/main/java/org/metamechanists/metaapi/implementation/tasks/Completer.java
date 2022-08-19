@@ -12,6 +12,7 @@ public class Completer {
     public void onSave() {}
 
     public void onSave(Player player) {}
+    //
 
     public void grantTaskRewards(Task task) {}
 
