@@ -6,12 +6,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import org.metamechanists.metaapi.config.Config;
 import org.metamechanists.metaapi.config.ResourceLoader;
-import org.metamechanists.metaapi.listeners.quests.OnBlockInteract;
-import org.metamechanists.metaapi.listeners.quests.OnKillMob;
-import org.metamechanists.metaapi.listeners.quests.OnMultiBlockCraft;
-import org.metamechanists.metaapi.listeners.quests.OnPlayerCommand;
-import org.metamechanists.metaapi.listeners.quests.OnPlayerCraft;
-import org.metamechanists.metaapi.listeners.quests.OnPlayerJoin;
+import org.metamechanists.metaapi.listeners.tasks.OnBlockInteract;
+import org.metamechanists.metaapi.listeners.tasks.OnKillMob;
+import org.metamechanists.metaapi.listeners.tasks.OnMultiBlockCraft;
+import org.metamechanists.metaapi.listeners.tasks.OnPlayerCommand;
+import org.metamechanists.metaapi.listeners.tasks.OnPlayerCraft;
+import org.metamechanists.metaapi.listeners.tasks.OnPlayerJoin;
 import org.metamechanists.metaapi.util.Log;
 import org.metamechanists.metaapi.util.PluginStorage;
 import org.metamechanists.metaapi.util.TextUtil;

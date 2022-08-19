@@ -1,4 +1,4 @@
-package org.metamechanists.metaapi.listeners.quests;
+package org.metamechanists.metaapi.listeners.tasks;
 
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Material;
@@ -9,18 +9,18 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.metamechanists.metaapi.implementation.quests.Quest;
-import org.metamechanists.metaapi.implementation.quests.QuestStorage;
-import org.metamechanists.metaapi.implementation.quests.Requirement;
-import org.metamechanists.metaapi.implementation.quests.requirements.BreakBlock;
-import org.metamechanists.metaapi.implementation.quests.requirements.PlaceBlock;
+import org.metamechanists.metaapi.implementation.tasks.Task;
+import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
+import org.metamechanists.metaapi.implementation.tasks.Requirement;
+import org.metamechanists.metaapi.implementation.tasks.requirements.BreakBlock;
+import org.metamechanists.metaapi.implementation.tasks.requirements.PlaceBlock;
 
 import java.util.Collection;
 import java.util.Objects;
 
 public class OnBlockInteract implements Listener {
 
-    public static void checkRequirement(String eventName, Player player, Quest quest, Requirement requirement, Block block) {
+    public static void checkRequirement(String eventName, Player player, Task task, Requirement requirement, Block block) {
 
         // Get SlimefunID
         Material type = block.getType();
@@ -43,7 +43,7 @@ public class OnBlockInteract implements Listener {
         if (requirementType == type && Objects.equals(requirementID, slimefunID)) {
 
             // Increment the objective
-            QuestStorage.updateProgress(player, quest, requirement, 1);
+            TaskStorage.updateProgress(player, task, requirement, 1);
         }
     }
 
@@ -62,10 +62,10 @@ public class OnBlockInteract implements Listener {
     public void onBlockInteract(String eventName, Block block, Player player) {
 
         //Check Requirements for given Variables
-        Collection<Quest> activeQuests = QuestStorage.getActiveQuests(player);
-        for (Quest quest : activeQuests) {
-            for (Requirement requirement : quest.getRequirements()) {
-                checkRequirement(eventName, player, quest, requirement, block);
+        Collection<Task> activeTasks = TaskStorage.getActiveTasks(player);
+        for (Task task : activeTasks) {
+            for (Requirement requirement : task.getRequirements()) {
+                checkRequirement(eventName, player, task, requirement, block);
             }
         }
     }

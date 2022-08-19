@@ -1,9 +1,9 @@
-package org.metamechanists.metaapi.implementation.quests.requirements;
+package org.metamechanists.metaapi.implementation.tasks.requirements;
 
 import lombok.Getter;
 
 import org.bukkit.Material;
-import org.metamechanists.metaapi.implementation.quests.Requirement;
+import org.metamechanists.metaapi.implementation.tasks.Requirement;
 
 @Getter
 public class PlaceBlock extends Requirement {

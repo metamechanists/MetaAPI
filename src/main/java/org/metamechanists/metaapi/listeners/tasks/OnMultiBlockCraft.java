@@ -1,4 +1,4 @@
-package org.metamechanists.metaapi.listeners.quests;
+package org.metamechanists.metaapi.listeners.tasks;
 
 import io.github.thebusybiscuit.slimefun4.api.events.MultiBlockInteractEvent;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
@@ -18,10 +18,10 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.metamechanists.metaapi.implementation.quests.Quest;
-import org.metamechanists.metaapi.implementation.quests.QuestStorage;
-import org.metamechanists.metaapi.implementation.quests.Requirement;
-import org.metamechanists.metaapi.implementation.quests.requirements.MultiBlockCraft;
+import org.metamechanists.metaapi.implementation.tasks.Task;
+import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
+import org.metamechanists.metaapi.implementation.tasks.Requirement;
+import org.metamechanists.metaapi.implementation.tasks.requirements.MultiBlockCraft;
 import org.metamechanists.metaapi.util.Log;
 
 import javax.annotation.Nonnull;
@@ -135,12 +135,12 @@ public class OnMultiBlockCraft implements Listener {
                     int delta = afterTotal.get(item) - beforeTotal.get(item);
                     Log.info(item.toString() + " " + delta);
                     if (delta > 0) {
-                        Collection<Quest> activeQuests = QuestStorage.getActiveQuests(player);
-                        for (Quest quest : activeQuests) {
-                            for (Requirement requirement : quest.getRequirements()) {
+                        Collection<Task> activeTasks = TaskStorage.getActiveTasks(player);
+                        for (Task task : activeTasks) {
+                            for (Requirement requirement : task.getRequirements()) {
                                 if (requirement instanceof MultiBlockCraft multiBlockCraft) {
                                     if (multiBlockCraft.getItem() == item) {
-                                        QuestStorage.updateProgress(player, quest, requirement, delta);
+                                        TaskStorage.updateProgress(player, task, requirement, delta);
                                     }
                                 }
                             }

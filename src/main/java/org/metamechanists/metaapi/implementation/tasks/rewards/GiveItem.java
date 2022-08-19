@@ -1,8 +1,8 @@
-package org.metamechanists.metaapi.implementation.quests.rewards;
+package org.metamechanists.metaapi.implementation.tasks.rewards;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.metamechanists.metaapi.implementation.quests.Reward;
+import org.metamechanists.metaapi.implementation.tasks.Reward;
 import org.metamechanists.metaapi.util.ItemUtil;
 
 public class GiveItem extends Reward {

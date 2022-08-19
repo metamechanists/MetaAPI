@@ -1,4 +1,4 @@
-package org.metamechanists.metaapi.listeners.quests;
+package org.metamechanists.metaapi.listeners.tasks;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -6,16 +6,16 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
-import org.metamechanists.metaapi.implementation.quests.Quest;
-import org.metamechanists.metaapi.implementation.quests.QuestStorage;
-import org.metamechanists.metaapi.implementation.quests.Requirement;
-import org.metamechanists.metaapi.implementation.quests.requirements.ExecuteCommand;
+import org.metamechanists.metaapi.implementation.tasks.Task;
+import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
+import org.metamechanists.metaapi.implementation.tasks.Requirement;
+import org.metamechanists.metaapi.implementation.tasks.requirements.ExecuteCommand;
 
 import java.util.Collection;
 
 public class OnPlayerCommand implements Listener {
 
-    private void checkRequirement(Player player, Quest quest, Requirement requirement, String command) {
+    private void checkRequirement(Player player, Task task, Requirement requirement, String command) {
         // Check if the requirement is relevant to this listener
         if (requirement instanceof ExecuteCommand executeCommand) {
 
@@ -25,7 +25,7 @@ public class OnPlayerCommand implements Listener {
             if (requirementCommand.equals(command)) {
 
                 // Increment the objective
-                QuestStorage.updateProgress(player, quest, requirement, 1);
+                TaskStorage.updateProgress(player, task, requirement, 1);
             }
         }
     }
@@ -36,10 +36,10 @@ public class OnPlayerCommand implements Listener {
         Player player = event.getPlayer();
         String command = event.getMessage();
 
-        Collection<Quest> activeQuests = QuestStorage.getActiveQuests(player);
-        for (Quest quest : activeQuests) {
-            for (Requirement requirement : quest.getRequirements()) {
-                checkRequirement(player, quest, requirement, command);
+        Collection<Task> activeTasks = TaskStorage.getActiveTasks(player);
+        for (Task task : activeTasks) {
+            for (Requirement requirement : task.getRequirements()) {
+                checkRequirement(player, task, requirement, command);
             }
         }
     }

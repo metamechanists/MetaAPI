@@ -1,4 +1,4 @@
-package org.metamechanists.metaapi.implementation.quests;
+package org.metamechanists.metaapi.implementation.tasks;
 
 import org.bukkit.entity.Player;
 

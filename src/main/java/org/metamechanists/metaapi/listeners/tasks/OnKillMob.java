@@ -1,4 +1,4 @@
-package org.metamechanists.metaapi.listeners.quests;
+package org.metamechanists.metaapi.listeners.tasks;
 
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -6,16 +6,16 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
-import org.metamechanists.metaapi.implementation.quests.Quest;
-import org.metamechanists.metaapi.implementation.quests.QuestStorage;
-import org.metamechanists.metaapi.implementation.quests.Requirement;
-import org.metamechanists.metaapi.implementation.quests.requirements.KillMob;
+import org.metamechanists.metaapi.implementation.tasks.Task;
+import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
+import org.metamechanists.metaapi.implementation.tasks.Requirement;
+import org.metamechanists.metaapi.implementation.tasks.requirements.KillMob;
 
 import java.util.Collection;
 
 public class OnKillMob implements Listener {
 
-    public static void checkRequirement(Player player, Quest quest, Requirement requirement, LivingEntity entity) {
+    public static void checkRequirement(Player player, Task task, Requirement requirement, LivingEntity entity) {
 
         // Check if the requirement is relevant to this listener
         if (requirement instanceof KillMob killMob) {
@@ -24,7 +24,7 @@ public class OnKillMob implements Listener {
             if (killMob.getType() == entity.getType()) {
 
                 // Increment the objective
-                QuestStorage.updateProgress(player, quest, requirement, 1);
+                TaskStorage.updateProgress(player, task, requirement, 1);
             }
         }
     }
@@ -38,11 +38,11 @@ public class OnKillMob implements Listener {
         // Make sure that the player killed the entity
         if (player == null) { return; }
 
-        // Check if each active quest involves this event
-        Collection<Quest> activeQuests = QuestStorage.getActiveQuests(player);
-        for (Quest quest : activeQuests) {
-            for (Requirement requirement : quest.getRequirements()) {
-                checkRequirement(player, quest, requirement, entity);
+        // Check if each active task involves this event
+        Collection<Task> activeTasks = TaskStorage.getActiveTasks(player);
+        for (Task task : activeTasks) {
+            for (Requirement requirement : task.getRequirements()) {
+                checkRequirement(player, task, requirement, entity);
             }
         }
     }

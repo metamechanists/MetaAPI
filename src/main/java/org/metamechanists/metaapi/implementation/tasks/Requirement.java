@@ -1,4 +1,4 @@
-package org.metamechanists.metaapi.implementation.quests;
+package org.metamechanists.metaapi.implementation.tasks;
 
 import lombok.Getter;
 import org.bukkit.event.Listener;

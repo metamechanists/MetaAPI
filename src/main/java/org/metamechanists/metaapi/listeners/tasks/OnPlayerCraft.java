@@ -1,4 +1,4 @@
-package org.metamechanists.metaapi.listeners.quests;
+package org.metamechanists.metaapi.listeners.tasks;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import org.bukkit.entity.HumanEntity;
@@ -8,17 +8,17 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.inventory.ItemStack;
-import org.metamechanists.metaapi.implementation.quests.Quest;
-import org.metamechanists.metaapi.implementation.quests.QuestStorage;
-import org.metamechanists.metaapi.implementation.quests.Requirement;
-import org.metamechanists.metaapi.implementation.quests.requirements.Craft;
+import org.metamechanists.metaapi.implementation.tasks.Task;
+import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
+import org.metamechanists.metaapi.implementation.tasks.Requirement;
+import org.metamechanists.metaapi.implementation.tasks.requirements.Craft;
 
 import java.util.Collection;
 import java.util.List;
 
 public class OnPlayerCraft implements Listener {
 
-    public static void checkRequirement(Player player, Quest quest, Requirement requirement, ItemStack result) {
+    public static void checkRequirement(Player player, Task task, Requirement requirement, ItemStack result) {
 
         // Check if the requirement is relevant to this listener
         if (requirement instanceof Craft craft) {
@@ -41,7 +41,7 @@ public class OnPlayerCraft implements Listener {
             if (vanillaPassed || slimefunPassed) {
 
                 // Increment the objective
-                QuestStorage.updateProgress(player, quest, requirement, result.getAmount());
+                TaskStorage.updateProgress(player, task, requirement, result.getAmount());
             }
         }
     }
@@ -52,13 +52,13 @@ public class OnPlayerCraft implements Listener {
         List<HumanEntity> players = event.getViewers();
         ItemStack result = event.getInventory().getResult();
 
-        // Check if each active quest involves this event
+        // Check if each active task involves this event
         for (HumanEntity entity : players) {
             Player player = (Player) entity;
-            Collection<Quest> activeQuests = QuestStorage.getActiveQuests(player);
-            for (Quest quest : activeQuests) {
-                for (Requirement requirement : quest.getRequirements()) {
-                    checkRequirement(player, quest, requirement, result);
+            Collection<Task> activeTasks = TaskStorage.getActiveTasks(player);
+            for (Task task : activeTasks) {
+                for (Requirement requirement : task.getRequirements()) {
+                    checkRequirement(player, task, requirement, result);
                 }
             }
         }

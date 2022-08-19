@@ -13,7 +13,7 @@ public class ItemUtil {
 
         // If some items couldn't fit, drop the items at the player's location and send them a message to notify them
         if (!remainingItems.isEmpty()) {
-            player.sendMessage(TextUtil.getLanguageEntry("quest.reward.no_inventory_space", player));
+            player.sendMessage(TextUtil.getLanguageEntry("task.reward.no_inventory_space", player));
             for (ItemStack drop : remainingItems.values()) {
                 player.getWorld().dropItemNaturally(player.getLocation(), drop);
             }
