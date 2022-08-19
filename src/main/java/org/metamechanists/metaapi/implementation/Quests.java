@@ -2,6 +2,7 @@ package org.metamechanists.metaapi.implementation;
 
 import lombok.Getter;
 
+import lombok.Setter;
 import org.metamechanists.metaapi.implementation.quests.Quest;
 
 import java.util.HashMap;
@@ -17,5 +18,6 @@ public class Quests {
     }
 
     @Getter
+    @Setter
     private static Quest rootQuest;
 }
