@@ -139,7 +139,7 @@ public class OnMultiBlockCraft implements Listener {
                     if (delta > 0) {
                         Collection<Task> activeTasks = TaskStorage.getActiveTasks(uuid);
                         for (Task task : activeTasks) {
-                            for (Requirement requirement : task.requirements()) {
+                            for (Requirement requirement : task.getRequirements()) {
                                 if (requirement instanceof MultiBlockCraft multiBlockCraft) {
                                     if (multiBlockCraft.getItem() == item) {
                                         // TODO left this as 'player' so not to forget to come back to this section

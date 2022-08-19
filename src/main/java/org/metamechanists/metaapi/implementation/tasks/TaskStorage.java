@@ -40,7 +40,7 @@ public class TaskStorage {
 
     private static void alertCompleter(String completer, String path) {
         if (MetaAPI.getInstance().getServer().getPlayer(completer) != null) {
-
+            // TODO
         }
     }
 
@@ -70,7 +70,7 @@ public class TaskStorage {
     @Nullable
     private static ConfigurationSection getTaskConfig(String completer, Task task) {
         //Return the Task Configuration Section for the Player
-        return getNestedConfiguration(getCompleterConfig(completer), task.id());
+        return getNestedConfiguration(getCompleterConfig(completer), task.getId());
     }
 
     @Nullable
@@ -100,7 +100,7 @@ public class TaskStorage {
 
     public static void checkTask(String completer, Method toCall, Object callFrom, Object...args) {
         for (Task task : TaskStorage.getActiveTasks("server")) {
-            for (Requirement requirement : task.requirements()) {
+            for (Requirement requirement : task.getRequirements()) {
                 try {
                     toCall.invoke(callFrom, completer, task, requirement, args);
                 } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
@@ -112,7 +112,7 @@ public class TaskStorage {
 
     public static int getProgress(String completer, Task task, Requirement requirement) {
         // Find the index at which this requirement is stored within the list of tasks, then use that as the key to get the progress of that requirement
-        List<Requirement> list = Arrays.asList(task.requirements());
+        List<Requirement> list = Arrays.asList(task.getRequirements());
         String key = String.valueOf(list.indexOf(requirement));
         return Objects.requireNonNull(getRequirementConfig(completer, task)).getInt(key);
     }
@@ -129,7 +129,7 @@ public class TaskStorage {
 
     public static boolean areTaskRequirementsComplete(String completer, Task task) {
         // Loop through every task
-        for (Requirement r : task.requirements()) {
+        for (Requirement r : task.getRequirements()) {
 
             // If any given requirement is incomplete, return false, since all requirements must be complete to mark the task as complete
             if (!isRequirementComplete(completer, task, r)) {
@@ -146,16 +146,16 @@ public class TaskStorage {
         ConfigurationSection playerSection = getCompleterConfig(completer);
 
         // Make sure that we haven't already added the task
-        if (playerSection.getConfigurationSection(task.id()) != null) {return;}
-        ConfigurationSection taskSection = playerSection.createSection(task.id());
+        if (playerSection.getConfigurationSection(task.getId()) != null) {return;}
+        ConfigurationSection taskSection = playerSection.createSection(task.getId());
         ConfigurationSection requirementSection = taskSection.createSection("requirements");
 
         // Initialise 'complete' to false
         taskSection.set("complete", false);
 
         // Initialise every requirement to have 0 progress
-        for (Requirement requirement : task.requirements()) {
-            List<Requirement> list = Arrays.asList(task.requirements());
+        for (Requirement requirement : task.getRequirements()) {
+            List<Requirement> list = Arrays.asList(task.getRequirements());
             String key = String.valueOf(list.indexOf(requirement));
             requirementSection.set(key, 0);
         }
@@ -191,7 +191,7 @@ public class TaskStorage {
 
     public static void updateProgress(String completer, Task task, Requirement requirement, int progress) {
         // Get a list of requirements, check that the list contains the given requirement, calculate the new progress, then set the new progress
-        List<Requirement> list = Arrays.asList(task.requirements());
+        List<Requirement> list = Arrays.asList(task.getRequirements());
         String key = String.valueOf(list.indexOf(requirement));
         int newProgress = getProgress(completer, task, requirement) + progress;
         Objects.requireNonNull(getRequirementConfig(completer, task)).set(key, newProgress);
@@ -205,10 +205,10 @@ public class TaskStorage {
     public static void unlockNewTasks(String completer, @Nullable Task limiter) {
         // Check if any new tasks should now be active
         for (Task newTask : Tasks.getTasks().values()) {
-            List<String> precursors = Arrays.asList(newTask.precursors());
+            List<String> precursors = Arrays.asList(newTask.getPrecursors());
 
             // Check if task is a precursor to newTask
-            if (limiter != null && !precursors.contains(limiter.id())) { continue; }
+            if (limiter != null && !precursors.contains(limiter.getId())) { continue; }
             boolean complete = true;
             for (String precursor : precursors) {
                 complete = isTaskComplete(completer, Tasks.getTasks().get(precursor)) && complete;
