@@ -12,7 +12,7 @@ public class TextUtil {
 
     private static String prefix = "";
 
-    public static void initialise() {
+    public static void initialize() {
         String pluginColor = getLanguageEntry("general.plugin_color");
         prefix  = getLanguageEntry("general.prefix", "plugin_color", pluginColor);
     }

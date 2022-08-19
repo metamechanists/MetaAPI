@@ -10,5 +10,7 @@ public abstract class Reward {
     @ParametersAreNullableByDefault
     public Reward() {}
 
+    public void reward() {}
+
     public abstract void rewardPlayer(Player player);
 }

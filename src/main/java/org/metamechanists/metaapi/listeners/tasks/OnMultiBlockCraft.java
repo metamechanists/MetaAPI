@@ -18,9 +18,9 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.metamechanists.metaapi.implementation.tasks.Requirement;
 import org.metamechanists.metaapi.implementation.tasks.Task;
 import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
-import org.metamechanists.metaapi.implementation.tasks.Requirement;
 import org.metamechanists.metaapi.implementation.tasks.requirements.MultiBlockCraft;
 import org.metamechanists.metaapi.util.Log;
 
@@ -97,6 +97,7 @@ public class OnMultiBlockCraft implements Listener {
 
         // Get some important variables
         Player player = event.getPlayer();
+        String uuid = player.getUniqueId().toString();
         MultiBlock multiBlock = event.getMultiBlock();
         Block block = event.getClickedBlock();
         Block possibleDispenser = block.getRelative(BlockFace.DOWN);
@@ -127,6 +128,7 @@ public class OnMultiBlockCraft implements Listener {
         Map<ItemStack, Integer> beforeTotal = getMappedContents(before);
         Map<ItemStack, Integer> afterTotal = getMappedContents(after);
 
+        // TODO finish this mess
         for (ItemStack item : beforeTotal.keySet()) {
             if (afterTotal.containsKey(item)) {
                 if (afterTotal.get(item).equals(beforeTotal.get(item))) {
@@ -135,12 +137,13 @@ public class OnMultiBlockCraft implements Listener {
                     int delta = afterTotal.get(item) - beforeTotal.get(item);
                     Log.info(item.toString() + " " + delta);
                     if (delta > 0) {
-                        Collection<Task> activeTasks = TaskStorage.getActiveTasks(player);
+                        Collection<Task> activeTasks = TaskStorage.getActiveTasks(uuid);
                         for (Task task : activeTasks) {
-                            for (Requirement requirement : task.getRequirements()) {
+                            for (Requirement requirement : task.requirements()) {
                                 if (requirement instanceof MultiBlockCraft multiBlockCraft) {
                                     if (multiBlockCraft.getItem() == item) {
-                                        TaskStorage.updateProgress(player, task, requirement, delta);
+                                        // TODO left this as 'player' so not to forget to come back to this section
+                                        TaskStorage.updateProgress(uuid, task, requirement, delta);
                                     }
                                 }
                             }

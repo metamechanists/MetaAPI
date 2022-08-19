@@ -15,17 +15,18 @@ public class OnPlayerJoin implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
-        //Get important Variables
+        // Get important variables
         Player player = event.getPlayer();
-        Collection<Task> activeTasks = TaskStorage.getActiveTasks(player);
+        String uuid = player.getUniqueId().toString();
+        Collection<Task> activeTasks = TaskStorage.getActiveTasks(uuid);
 
-        //Assure that the Player has the Starting Task, if not add it
-        if (! activeTasks.contains(Tasks.getRootTask())) {
-            TaskStorage.addTask(player, Tasks.getRootTask());
-            TaskStorage.completeTask(player, Tasks.getRootTask());
+        // Ensure that the player has the root task, if not add it
+        if (!activeTasks.contains(Tasks.getRootTask())) {
+            TaskStorage.addTask(uuid, Tasks.getRootTask());
+            TaskStorage.completeTask(uuid, Tasks.getRootTask());
         }
 
-        //Check if any new Tasks should be Unlocked
-        TaskStorage.unlockNewTasks(player, null);
+        // Check if any new tasks should be unlocked
+        TaskStorage.unlockNewTasks(uuid, null);
     }
 }

@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import org.metamechanists.metaapi.config.Config;
 import org.metamechanists.metaapi.config.ResourceLoader;
+import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
 import org.metamechanists.metaapi.listeners.tasks.OnBlockInteract;
 import org.metamechanists.metaapi.listeners.tasks.OnKillMob;
 import org.metamechanists.metaapi.listeners.tasks.OnMultiBlockCraft;
@@ -28,7 +29,8 @@ public class MetaAPI {
         Log.initialize();
         ResourceLoader.initialize();
         Config.initialize();
-        TextUtil.initialise();
+        TextUtil.initialize();
+        TaskStorage.initialize();
         addTaskListeners();
     }
 

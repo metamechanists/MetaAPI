@@ -13,6 +13,11 @@ public class RunCommand extends Reward {
         this.command = command;
     }
 
+    public void reward() {
+        // Run the command as console
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
+    }
+
     @Override
     public void rewardPlayer(Player player) {
         // Run the command as console

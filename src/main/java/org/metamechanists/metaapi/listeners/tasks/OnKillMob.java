@@ -6,16 +6,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
+import org.metamechanists.metaapi.implementation.tasks.Requirement;
 import org.metamechanists.metaapi.implementation.tasks.Task;
 import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
-import org.metamechanists.metaapi.implementation.tasks.Requirement;
 import org.metamechanists.metaapi.implementation.tasks.requirements.KillMob;
-
-import java.util.Collection;
 
 public class OnKillMob implements Listener {
 
-    public static void checkRequirement(Player player, Task task, Requirement requirement, LivingEntity entity) {
+    public static void checkRequirement(String completer, Task task, Requirement requirement, LivingEntity entity) {
 
         // Check if the requirement is relevant to this listener
         if (requirement instanceof KillMob killMob) {
@@ -24,26 +22,27 @@ public class OnKillMob implements Listener {
             if (killMob.getType() == entity.getType()) {
 
                 // Increment the objective
-                TaskStorage.updateProgress(player, task, requirement, 1);
+                TaskStorage.updateProgress(completer, task, requirement, 1);
             }
         }
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
-    public void onKillMob(EntityDeathEvent event) {
+    public void onKillMob(EntityDeathEvent event) throws NoSuchMethodException {
         // Get some important variables
         LivingEntity entity = event.getEntity();
         Player player = entity.getKiller();
 
         // Make sure that the player killed the entity
         if (player == null) { return; }
+        String uuid = player.getUniqueId().toString();
 
-        // Check if each active task involves this event
-        Collection<Task> activeTasks = TaskStorage.getActiveTasks(player);
-        for (Task task : activeTasks) {
-            for (Requirement requirement : task.getRequirements()) {
-                checkRequirement(player, task, requirement, entity);
-            }
-        }
+        // Check player task
+        TaskStorage.checkTask(uuid, this.getClass().getMethod(
+                "checkRequirement", String.class, Task.class, Requirement.class, LivingEntity.class), this, entity);
+
+        // Check server task
+        TaskStorage.checkTask(TaskStorage.SERVER_TASK_KEY, this.getClass().getMethod(
+                "checkRequirement", String.class, Task.class, Requirement.class, LivingEntity.class), this, entity);
     }
 }

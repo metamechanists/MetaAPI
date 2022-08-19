@@ -5,17 +5,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-
+import org.metamechanists.metaapi.implementation.tasks.Requirement;
 import org.metamechanists.metaapi.implementation.tasks.Task;
 import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
-import org.metamechanists.metaapi.implementation.tasks.Requirement;
 import org.metamechanists.metaapi.implementation.tasks.requirements.ExecuteCommand;
-
-import java.util.Collection;
 
 public class OnPlayerCommand implements Listener {
 
-    private void checkRequirement(Player player, Task task, Requirement requirement, String command) {
+    private void checkRequirement(String completer, Task task, Requirement requirement, String command) {
         // Check if the requirement is relevant to this listener
         if (requirement instanceof ExecuteCommand executeCommand) {
 
@@ -25,22 +22,24 @@ public class OnPlayerCommand implements Listener {
             if (requirementCommand.equals(command)) {
 
                 // Increment the objective
-                TaskStorage.updateProgress(player, task, requirement, 1);
+                TaskStorage.updateProgress(completer, task, requirement, 1);
             }
         }
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
-    public void onPlayerCommand(PlayerCommandPreprocessEvent event) {
+    public void onPlayerCommand(PlayerCommandPreprocessEvent event) throws NoSuchMethodException{
         //Get Important Variables
         Player player = event.getPlayer();
         String command = event.getMessage();
+        String uuid = player.getUniqueId().toString();
 
-        Collection<Task> activeTasks = TaskStorage.getActiveTasks(player);
-        for (Task task : activeTasks) {
-            for (Requirement requirement : task.getRequirements()) {
-                checkRequirement(player, task, requirement, command);
-            }
-        }
+        // Check player task
+        TaskStorage.checkTask(uuid, this.getClass().getMethod("checkRequirement",
+                String.class, Task.class, Requirement.class, String.class), this, command);
+
+        // Check server task
+        TaskStorage.checkTask(TaskStorage.SERVER_TASK_KEY, this.getClass().getMethod("checkRequirement",
+                String.class, Task.class, Requirement.class, String.class), this, command);
     }
 }
