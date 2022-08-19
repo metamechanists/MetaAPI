@@ -33,10 +33,10 @@ public class OnBlockInteract implements Listener {
         // If the requirement is a BreakBlock, cast the requirement and read the relevant variables
         // Do the same if it's a PlaceBlock
         Log.info(eventName);
-        if (requirement instanceof  BreakBlock breakBlock && eventName.equals("onBlockBreak")) {
+        if (requirement instanceof  BreakBlock breakBlock && eventName.equals("BlockBreakEvent")) {
             requirementType = breakBlock.getType();
             requirementID = breakBlock.getSlimefunID();
-        } else if (requirement instanceof PlaceBlock placeBlock && eventName.equals("onBlockPlace")) {
+        } else if (requirement instanceof PlaceBlock placeBlock && eventName.equals("BlockPlaceEvent")) {
             requirementType = placeBlock.getType();
             requirementID = placeBlock.getSlimefunID();
         }
