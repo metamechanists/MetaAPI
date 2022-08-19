@@ -12,7 +12,6 @@ import org.metamechanists.metaapi.implementation.quests.Quest;
 import org.metamechanists.metaapi.implementation.quests.QuestStorage;
 import org.metamechanists.metaapi.implementation.quests.Requirement;
 import org.metamechanists.metaapi.implementation.quests.requirements.Craft;
-import org.metamechanists.metaapi.util.Log;
 
 import java.util.Collection;
 import java.util.List;
@@ -20,8 +19,6 @@ import java.util.List;
 public class OnPlayerCraft implements Listener {
 
     public static void checkRequirement(Player player, Quest quest, Requirement requirement, ItemStack result) {
-
-        Log.info("4");
 
         // Check if the requirement is relevant to this listener
         if (requirement instanceof Craft craft) {

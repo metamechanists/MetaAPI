@@ -14,7 +14,6 @@ import org.metamechanists.metaapi.implementation.quests.QuestStorage;
 import org.metamechanists.metaapi.implementation.quests.Requirement;
 import org.metamechanists.metaapi.implementation.quests.requirements.BreakBlock;
 import org.metamechanists.metaapi.implementation.quests.requirements.PlaceBlock;
-import org.metamechanists.metaapi.util.Log;
 
 import java.util.Collection;
 import java.util.Objects;
@@ -32,7 +31,6 @@ public class OnBlockInteract implements Listener {
 
         // If the requirement is a BreakBlock, cast the requirement and read the relevant variables
         // Do the same if it's a PlaceBlock
-        Log.info(eventName);
         if (requirement instanceof  BreakBlock breakBlock && eventName.equals("BlockBreakEvent")) {
             requirementType = breakBlock.getType();
             requirementID = breakBlock.getSlimefunID();
@@ -63,7 +61,6 @@ public class OnBlockInteract implements Listener {
 
     public void onBlockInteract(String eventName, Block block, Player player) {
 
-        Log.info("Le Debug");
         //Check Requirements for given Variables
         Collection<Quest> activeQuests = QuestStorage.getActiveQuests(player);
         for (Quest quest : activeQuests) {

@@ -27,7 +27,6 @@ public class TextUtil {
         for (Object object : args) {
             //If the Argument should not Be Skipped, Make sure it is a String
             //If it is add it to the Map
-            Log.info(String.valueOf(object.getClass()));
             if (!skip && object instanceof String string) {
                 skip = true;
                 i++;
