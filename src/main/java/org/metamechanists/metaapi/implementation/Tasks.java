@@ -14,7 +14,7 @@ public class Tasks {
     private static final Map<String, Task> tasks = new HashMap<>();
 
     public static void addTask(Task task) {
-        tasks.put(task.id(), task);
+        tasks.put(task.getId(), task);
     }
 
     @Getter

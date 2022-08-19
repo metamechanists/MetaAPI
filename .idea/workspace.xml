@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" afterDir="false" />
-    </list>
+    <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="" />
     <list id="f6e02cfa-d320-4114-a477-98c5cf060289" name="Changes by JustAHuman" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/completers/PlayerCompleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/completers/PlayerCompleter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/completers/ServerCompleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/completers/ServerCompleter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,17 +26,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java">
-      <ranges>
-        <range start1="149" end1="150" start2="149" end2="150" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="156" end1="158" start2="156" end2="158" changelist="f6e02cfa-d320-4114-a477-98c5cf060289" />
-        <range start1="193" end1="194" start2="193" end2="194" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="207" end1="208" start2="207" end2="208" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="210" end1="211" start2="210" end2="211" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
