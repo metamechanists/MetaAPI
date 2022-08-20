@@ -1,0 +1,10 @@
+task:
+  complete_task: "&aYou have Completed the {task} Quest!"
+  unlock_task: "&aYou have Unlocked a New Quest!"
+  reward:
+    no_inventory_space: "&cYou didn't have space in your inventory! The quest reward has been dropped on the ground at your location."
+
+general:
+  plugin_color: "&x&7&7&1&6&4&5"
+  prefix: "{plugin_color}[MetaCore]&f: "
+  data_saved: "&aData saved!"
