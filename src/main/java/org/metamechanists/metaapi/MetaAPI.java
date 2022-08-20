@@ -25,8 +25,7 @@ public class MetaAPI extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        instance = this;
-        initialize(instance);
+
     }
 
     public static void initialize(JavaPlugin plugin) {
