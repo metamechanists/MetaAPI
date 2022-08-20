@@ -1,0 +1,5 @@
+name: MetaAPI
+version: PREALPHA
+main: org.metamechanists.metaapi.MetaAPI
+api-version: 1.19
+depend: [Slimefun]
