@@ -18,10 +18,16 @@ import org.metamechanists.metaapi.util.PluginStorage;
 import org.metamechanists.metaapi.util.TextUtil;
 
 @SuppressWarnings("unused")
-public class MetaAPI {
+public class MetaAPI extends JavaPlugin {
 
     @Getter
     public static JavaPlugin instance;
+
+    @Override
+    public void onEnable() {
+        instance = this;
+        initialize(instance);
+    }
 
     public static void initialize(JavaPlugin plugin) {
         instance = plugin;
