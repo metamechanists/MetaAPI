@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="" />
-    <list id="2c710406-914a-4a20-a7cb-282bb7f1a801" name="Changes by idra" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" afterDir="false" />
-    </list>
+    <list id="2c710406-914a-4a20-a7cb-282bb7f1a801" name="Changes by idra" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

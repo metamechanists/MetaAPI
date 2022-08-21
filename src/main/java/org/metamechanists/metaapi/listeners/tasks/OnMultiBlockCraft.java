@@ -122,7 +122,7 @@ public class OnMultiBlockCraft implements Listener {
         // Read the items in the output inventory into a list, let the multiblock do its thing, then read the items again
         List<ItemStack> beforeBroken = getItems(block, dispenser, false, null, null, null);
 
-        List<ItemStack> before = new ArrayList<>(beforeBroken);
+        List<ItemStack> before = List.copyOf(beforeBroken);
         Log.info("beforeBroken 1: " + beforeBroken);
         Log.info("before 1: " + before);
 
@@ -137,7 +137,7 @@ public class OnMultiBlockCraft implements Listener {
         // Remove all the items from the list that were already there before
         Map<ItemStack, Integer> beforeTotal = getMappedContents(before);
         Map<ItemStack, Integer> afterTotal = getMappedContents(after);
-        Map<ItemStack, Integer> deltaMap = new HashMap<>(beforeTotal);
+        Map<ItemStack, Integer> deltaMap = new HashMap<>(Map.copyOf(beforeTotal));
 
         // TODO finish this mess
         Log.info("starting iteration");
