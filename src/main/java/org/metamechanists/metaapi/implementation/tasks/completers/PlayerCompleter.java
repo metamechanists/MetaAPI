@@ -16,7 +16,7 @@ public class PlayerCompleter extends Completer {
 
     }
 
-    public void grantTaskRewards(Player player, Task task) {
+    public void grantTaskRewards(Task task, Player player) {
         // Get reward array
         Reward[] rewards = task.getRewards();
 

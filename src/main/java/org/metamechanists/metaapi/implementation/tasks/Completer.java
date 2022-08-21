@@ -15,5 +15,5 @@ public class Completer {
 
     public void grantTaskRewards(Task task) {}
 
-    public void grantTaskRewards(Player player, Task task) {}
+    public void grantTaskRewards(Task task, Player player) {}
 }

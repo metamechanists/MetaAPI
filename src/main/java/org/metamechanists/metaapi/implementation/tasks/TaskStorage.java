@@ -3,9 +3,9 @@ package org.metamechanists.metaapi.implementation.tasks;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
 import org.metamechanists.metaapi.MetaAPI;
 import org.metamechanists.metaapi.implementation.Tasks;
+import org.metamechanists.metaapi.implementation.tasks.completers.PlayerCompleter;
 import org.metamechanists.metaapi.util.Log;
 
 import javax.annotation.Nullable;
@@ -195,23 +195,13 @@ public class TaskStorage {
         // Notify the Player they Completed the Task
         alertCompleter(completer, "task.complete_task");
 
-        // Attempt to get the Player from the UUID
-        Player player = null;
-        try {
-            player = MetaAPI.getInstance().getServer().getPlayer(UUID.fromString(completer));
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        }
-
-
         // Check if player does Exist
-        if (player != null) {
+        if (task.getCompleter() instanceof PlayerCompleter playerCompleter) {
             // If so, reward the player
-            task.getCompleter().grantTaskRewards(player, task);
-
+            playerCompleter.grantTaskRewards(task, MetaAPI.getInstance().getServer().getPlayer(UUID.fromString(completer)));
         } else {
             // Otherwise, reward the server
-            task.getCompleter().grantTaskRewards(task);
+            task.getCompleter().grantTaskRewards(task, null);
         }
 
         // Check if any new tasks should be Unlocked

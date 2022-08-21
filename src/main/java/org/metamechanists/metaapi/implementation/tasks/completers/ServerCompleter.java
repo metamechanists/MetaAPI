@@ -7,7 +7,7 @@ import org.metamechanists.metaapi.implementation.tasks.Task;
 
 public class ServerCompleter extends Completer {
 
-    public void grantTaskRewards(Player player, Task task) {
+    public void grantTaskRewards(Task task, Player player) {
         // Get reward array
 
         Reward[] rewards = task.getRewards();
@@ -16,7 +16,7 @@ public class ServerCompleter extends Completer {
         for (Reward reward : rewards) {
 
             // Activate reward method
-            reward.rewardPlayer(player);
+            //reward.rewardPlayer(player);
         }
     }
 
