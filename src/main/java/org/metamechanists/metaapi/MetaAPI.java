@@ -25,12 +25,14 @@ public class MetaAPI extends JavaPlugin {
 
     public static void initialize(JavaPlugin plugin) {
         instance = plugin;
+
         PluginStorage.initialize(instance);
         Log.initialize();
         ResourceLoader.initialize();
         Config.initialize();
         TextUtil.initialize();
         TaskStorage.initialize();
+
         addTaskListeners();
     }
 

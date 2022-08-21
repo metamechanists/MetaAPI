@@ -15,6 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
@@ -36,6 +37,9 @@ public class TaskStorage {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        // Add root task to server if missing
+        TaskStorage.addRootTaskIfMissing(TaskStorage.SERVER_TASK_KEY);
     }
 
     private static void alertCompleter(String completer, String path) {
@@ -122,13 +126,9 @@ public class TaskStorage {
     }
 
     public static void checkTask(String completer, Method toCall, Object callFrom, Object...args) {
-        Log.info("checkTask");
-        for (Task task : TaskStorage.getActiveTasks("server")) {
-            Log.info("iterating " + task.toString());
+        for (Task task : getActiveTasks(completer)) {
             for (Requirement requirement : task.getRequirements()) {
-                Log.info("iterating " + requirement.toString());
                 try {
-                    Log.info("calling");
                     toCall.invoke(callFrom, completer, task, requirement, args);
                 } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
                     e.printStackTrace();
@@ -248,6 +248,20 @@ public class TaskStorage {
                 addTask(completer, newTask);
             }
         }
+    }
+
+    public static void addRootTaskIfMissing(String completer) {
+        // Get all the unlocked tasks
+        Collection<Task> tasks = TaskStorage.getAllTasks(completer);
+
+        // Ensure that the player has the root task, if not add it
+        if (!tasks.contains(Tasks.getRootTask()) && !tasks.contains(Tasks.getRootTask())) {
+            TaskStorage.addTask(completer, Tasks.getRootTask());
+            TaskStorage.completeTask(completer, Tasks.getRootTask());
+        }
+
+        // Check if any new tasks should be unlocked
+        TaskStorage.unlockNewTasks(completer, null);
     }
 
     public static void save() {

@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="" />
-    <list id="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" name="Changes by idra" comment="" />
+    <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnBlockInteract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnBlockInteract.java" afterDir="false" />
+    </list>
+    <list id="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" name="Changes by idra" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +28,16 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java">
+      <ranges>
+        <range start1="124" end1="127" start2="124" end2="125" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="128" end1="129" start2="126" end2="126" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="130" end1="131" start2="127" end2="127" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="251" end1="251" start2="247" end2="251" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
