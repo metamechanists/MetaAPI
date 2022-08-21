@@ -85,7 +85,7 @@ public class OnMultiBlockCraft implements Listener {
         for (Inventory inventory : inventories) {
             for (ItemStack itemStack : inventory.getContents()) {
                 if (itemStack != null) {
-                    items.add(itemStack);
+                    items.add(itemStack.clone());
                 }
             }
         }
