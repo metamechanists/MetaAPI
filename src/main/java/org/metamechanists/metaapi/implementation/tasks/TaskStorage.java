@@ -122,9 +122,13 @@ public class TaskStorage {
     }
 
     public static void checkTask(String completer, Method toCall, Object callFrom, Object...args) {
+        Log.info("checkTask");
         for (Task task : TaskStorage.getActiveTasks("server")) {
+            Log.info("iterating " + task.toString());
             for (Requirement requirement : task.getRequirements()) {
+                Log.info("iterating " + requirement.toString());
                 try {
+                    Log.info("calling");
                     toCall.invoke(callFrom, completer, task, requirement, args);
                 } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
                     e.printStackTrace();
