@@ -196,11 +196,16 @@ public class TaskStorage {
         alertCompleter(completer, "task.complete_task");
 
         // Attempt to get the Player from the UUID
-        Object object = MetaAPI.getInstance().getServer().getPlayer(UUID.fromString(completer));
+        Player player = null;
+        try {
+            player = MetaAPI.getInstance().getServer().getPlayer(UUID.fromString(completer));
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
 
-        // Check if the object is in fact a Player
-        if (object instanceof Player player) {
 
+        // Check if player does Exist
+        if (player != null) {
             // If so, reward the player
             task.getCompleter().grantTaskRewards(player, task);
 
