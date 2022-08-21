@@ -2,6 +2,7 @@ package org.metamechanists.metaapi.listeners.tasks;
 
 import io.github.thebusybiscuit.slimefun4.api.events.MultiBlockInteractEvent;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.core.handlers.MultiBlockInteractionHandler;
 import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlock;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.OutputChest;
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
@@ -78,12 +79,17 @@ public class OnMultiBlockCraft implements Listener {
         return new Inventory[] { dispenserInventory, outputChestInventory };
     }
 
-    private static List<ItemStack> getItems(Block block, Dispenser dispenser) {
+    private static List<ItemStack> getItems(Block block, Dispenser dispenser, boolean complete, Player player, MultiBlock multiBlock, Block mBlock) {
         // Read the items in the output inventory into a list
         Inventory[] inventories = findOutputInventories(block, dispenser);
         List<ItemStack> items = new ArrayList<>();
         for (Inventory inventory : inventories) {
             items.addAll(Arrays.asList(inventory.getContents()));
+        }
+        if (complete) {
+            multiBlock.getSlimefunItem().callItemHandler(
+                    MultiBlockInteractionHandler.class,
+                    handler -> handler.onInteract(player, multiBlock, mBlock));
         }
         return items;
     }
@@ -114,16 +120,16 @@ public class OnMultiBlockCraft implements Listener {
         Log.info("3");
 
         // Read the items in the output inventory into a list, let the multiblock do its thing, then read the items again
-        List<ItemStack> before = getItems(block, dispenser);
-        //multiBlock.getSlimefunItem().callItemHandler(
-        //        MultiBlockInteractionHandler.class,
-        //        handler -> handler.onInteract(player, multiBlock, block));
-        List<ItemStack> after = getItems(block, dispenser);
+        List<ItemStack> before = getItems(block, dispenser, true, player, multiBlock, block);
+
+        Log.info("before 1: " + before);
+
+        List<ItemStack> after = getItems(block, dispenser, false, null, null, null);
 
         Log.info("4");
 
-        Log.info(before.toString());
-        Log.info(after.toString());
+        Log.info("before 2: " + before);
+        Log.info("after: " + after);
 
         // Remove all the items from the list that were already there before
         Map<ItemStack, Integer> beforeTotal = getMappedContents(before);
