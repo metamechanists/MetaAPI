@@ -143,12 +143,13 @@ public class OnMultiBlockCraft implements Listener {
         Log.info("starting iteration");
         for (ItemStack item : beforeTotal.keySet()) {
             Log.info("iterating");
-            if (item != null && afterTotal.containsKey(item)) {
+            if (afterTotal.containsKey(item)) {
                 if (afterTotal.get(item).equals(beforeTotal.get(item))) {
                     deltaMap.remove(item);
                 } else {
                     int delta = afterTotal.get(item) - beforeTotal.get(item);
                     Log.info(item + " " + delta);
+                    deltaMap.put(item, delta);
                     if (delta > 0) {
                         Collection<Task> activeTasks = TaskStorage.getActiveTasks(uuid);
                         for (Task task : activeTasks) {
@@ -160,6 +161,8 @@ public class OnMultiBlockCraft implements Listener {
                                 }
                             }
                         }
+                    } else {
+                        deltaMap.remove(item);
                     }
                 }
             }
