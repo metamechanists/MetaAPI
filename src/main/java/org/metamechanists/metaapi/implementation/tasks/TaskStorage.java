@@ -37,9 +37,6 @@ public class TaskStorage {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        // Add root task to server if missing
-        TaskStorage.addRootTaskIfMissing(TaskStorage.SERVER_TASK_KEY);
     }
 
     private static void alertCompleter(String completer, String path) {
@@ -252,16 +249,16 @@ public class TaskStorage {
 
     public static void addRootTaskIfMissing(String completer) {
         // Get all the unlocked tasks
-        Collection<Task> tasks = TaskStorage.getAllTasks(completer);
+        Collection<Task> tasks = getAllTasks(completer);
 
         // Ensure that the player has the root task, if not add it
         if (!tasks.contains(Tasks.getRootTask()) && !tasks.contains(Tasks.getRootTask())) {
-            TaskStorage.addTask(completer, Tasks.getRootTask());
-            TaskStorage.completeTask(completer, Tasks.getRootTask());
+            addTask(completer, Tasks.getRootTask());
+            completeTask(completer, Tasks.getRootTask());
         }
 
         // Check if any new tasks should be unlocked
-        TaskStorage.unlockNewTasks(completer, null);
+        unlockNewTasks(completer, null);
     }
 
     public static void save() {

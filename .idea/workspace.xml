@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnBlockInteract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnBlockInteract.java" afterDir="false" />
     </list>
     <list id="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" name="Changes by idra" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" afterDir="false" />
@@ -32,10 +31,10 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java">
       <ranges>
-        <range start1="124" end1="127" start2="124" end2="125" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="128" end1="129" start2="126" end2="126" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="130" end1="131" start2="127" end2="127" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="251" end1="251" start2="247" end2="251" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+        <range start1="41" end1="42" start2="41" end2="42" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="254" end1="255" start2="254" end2="255" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+        <range start1="258" end1="260" start2="258" end2="260" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+        <range start1="263" end1="264" start2="263" end2="264" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
       </ranges>
     </file>
   </component>
