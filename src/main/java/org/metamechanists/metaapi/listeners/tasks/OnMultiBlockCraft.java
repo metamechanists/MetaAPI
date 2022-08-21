@@ -6,7 +6,9 @@ import io.github.thebusybiscuit.slimefun4.core.handlers.MultiBlockInteractionHan
 import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlock;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.OutputChest;
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
+import lombok.SneakyThrows;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
+
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.BlockState;
@@ -18,6 +20,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+
 import org.metamechanists.metaapi.implementation.tasks.Requirement;
 import org.metamechanists.metaapi.implementation.tasks.Task;
 import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
@@ -88,6 +91,7 @@ public class OnMultiBlockCraft implements Listener {
         return items;
     }
 
+    @SneakyThrows
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onMultiBlockCraft(MultiBlockInteractEvent event) {
 
@@ -114,6 +118,7 @@ public class OnMultiBlockCraft implements Listener {
 
         // Read the items in the output inventory into a list, let the multiblock do its thing, then read the items again
         List<ItemStack> before = getItems(block, dispenser);
+        Thread.sleep(100);
         multiBlock.getSlimefunItem().callItemHandler(
                 MultiBlockInteractionHandler.class,
                 handler -> handler.onInteract(player, multiBlock, block));

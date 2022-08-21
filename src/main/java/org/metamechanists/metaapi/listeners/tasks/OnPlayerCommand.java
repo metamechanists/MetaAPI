@@ -12,7 +12,7 @@ import org.metamechanists.metaapi.implementation.tasks.requirements.ExecuteComma
 
 public class OnPlayerCommand implements Listener {
 
-    private void checkRequirement(String completer, Task task, Requirement requirement, String command) {
+    public void checkRequirement(String completer, Task task, Requirement requirement, String command) {
         // Check if the requirement is relevant to this listener
         if (requirement instanceof ExecuteCommand executeCommand) {
 
