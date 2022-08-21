@@ -31,7 +31,7 @@ public class OnBlockInteract implements Listener {
 
         // If the requirement is a BreakBlock, cast the requirement and read the relevant variables
         // Do the same if it's a PlaceBlock
-        if (requirement instanceof  BreakBlock breakBlock && eventName.equals("BlockBreakEvent")) {
+        if (requirement instanceof BreakBlock breakBlock && eventName.equals("BlockBreakEvent")) {
             Log.info("break block requirement found");
             requirementType = breakBlock.getType();
             requirementID = breakBlock.getSlimefunID();
@@ -52,16 +52,20 @@ public class OnBlockInteract implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onBlockBreak(BlockBreakEvent event) throws NoSuchMethodException {
         //Check Requirements
+        Log.info("blockBreak");
         onBlockInteract(event.getEventName(), event.getBlock(), event.getPlayer());
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onBlockPlace(BlockPlaceEvent event) throws NoSuchMethodException {
         //Check Requirements
+        Log.info("blockPlace");
         onBlockInteract(event.getEventName(), event.getBlock(), event.getPlayer());
     }
 
     public void onBlockInteract(String eventName, Block block, Player player) throws NoSuchMethodException {
+
+        Log.info("blockInteract");
 
         //Check Requirements for given Variables
         String uuid = player.getUniqueId().toString();
