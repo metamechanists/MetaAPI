@@ -31,10 +31,11 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java">
       <ranges>
-        <range start1="130" end1="130" start2="130" end2="131" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="137" end1="138" start2="138" end2="139" changelist="2c710406-914a-4a20-a7cb-282bb7f1a801" />
-        <range start1="140" end1="141" start2="141" end2="142" changelist="2c710406-914a-4a20-a7cb-282bb7f1a801" />
-        <range start1="157" end1="158" start2="158" end2="159" changelist="2c710406-914a-4a20-a7cb-282bb7f1a801" />
+        <range start1="4" end1="4" start2="4" end2="5" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="80" end1="81" start2="81" end2="82" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="87" end1="87" start2="88" end2="93" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="116" end1="121" start2="122" end2="127" changelist="2c710406-914a-4a20-a7cb-282bb7f1a801" />
+        <range start1="124" end1="126" start2="130" end2="132" changelist="2c710406-914a-4a20-a7cb-282bb7f1a801" />
       </ranges>
     </file>
   </component>
