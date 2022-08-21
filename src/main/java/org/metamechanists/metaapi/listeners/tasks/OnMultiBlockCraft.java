@@ -115,7 +115,6 @@ public class OnMultiBlockCraft implements Listener {
 
         // Read the items in the output inventory into a list, let the multiblock do its thing, then read the items again
         List<ItemStack> before = getItems(block, dispenser);
-        Thread.sleep(100);
         //multiBlock.getSlimefunItem().callItemHandler(
         //        MultiBlockInteractionHandler.class,
         //        handler -> handler.onInteract(player, multiBlock, block));
@@ -132,7 +131,7 @@ public class OnMultiBlockCraft implements Listener {
 
         // TODO finish this mess
         for (ItemStack item : beforeTotal.keySet()) {
-            if (afterTotal.containsKey(item)) {
+            if (item != null && afterTotal.containsKey(item)) {
                 if (afterTotal.get(item).equals(beforeTotal.get(item))) {
                     beforeTotal.remove(item);
                 } else {
