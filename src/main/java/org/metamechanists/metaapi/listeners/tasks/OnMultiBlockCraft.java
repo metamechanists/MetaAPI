@@ -130,7 +130,9 @@ public class OnMultiBlockCraft implements Listener {
         Map<ItemStack, Integer> afterTotal = getMappedContents(after);
 
         // TODO finish this mess
+        Log.info("starting iteration");
         for (ItemStack item : beforeTotal.keySet()) {
+            Log.info("iterating");
             if (item != null && afterTotal.containsKey(item)) {
                 if (afterTotal.get(item).equals(beforeTotal.get(item))) {
                     beforeTotal.remove(item);
@@ -143,7 +145,6 @@ public class OnMultiBlockCraft implements Listener {
                             for (Requirement requirement : task.getRequirements()) {
                                 if (requirement instanceof MultiBlockCraft multiBlockCraft) {
                                     if (multiBlockCraft.getItem() == item) {
-                                        // TODO left this as 'player' so not to forget to come back to this section
                                         TaskStorage.updateProgress(uuid, task, requirement, delta);
                                     }
                                 }
@@ -171,6 +172,7 @@ public class OnMultiBlockCraft implements Listener {
                 map.put(key, itemStack.getAmount());
             }
         }
+        Log.info("Done Mapping");
         return map;
     }
 }
