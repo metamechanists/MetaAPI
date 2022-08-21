@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" afterDir="false" />
     </list>
-    <list id="3366a2b1-a468-40d6-ba0d-4a9b8297e6ac" name="Changes by idra" comment="">
+    <list id="2c710406-914a-4a20-a7cb-282bb7f1a801" name="Changes by idra" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,10 +31,10 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java">
       <ranges>
-        <range start1="132" end1="132" start2="132" end2="133" changelist="3366a2b1-a468-40d6-ba0d-4a9b8297e6ac" />
-        <range start1="133" end1="133" start2="134" end2="135" changelist="3366a2b1-a468-40d6-ba0d-4a9b8297e6ac" />
-        <range start1="145" end1="146" start2="147" end2="147" changelist="3366a2b1-a468-40d6-ba0d-4a9b8297e6ac" />
-        <range start1="173" end1="173" start2="174" end2="175" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="130" end1="130" start2="130" end2="131" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="137" end1="138" start2="138" end2="139" changelist="2c710406-914a-4a20-a7cb-282bb7f1a801" />
+        <range start1="140" end1="141" start2="141" end2="142" changelist="2c710406-914a-4a20-a7cb-282bb7f1a801" />
+        <range start1="157" end1="158" start2="158" end2="159" changelist="2c710406-914a-4a20-a7cb-282bb7f1a801" />
       </ranges>
     </file>
   </component>

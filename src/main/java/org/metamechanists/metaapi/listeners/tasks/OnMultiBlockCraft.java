@@ -128,6 +128,7 @@ public class OnMultiBlockCraft implements Listener {
         // Remove all the items from the list that were already there before
         Map<ItemStack, Integer> beforeTotal = getMappedContents(before);
         Map<ItemStack, Integer> afterTotal = getMappedContents(after);
+        Map<ItemStack, Integer> deltaMap = new HashMap<>(beforeTotal);
 
         // TODO finish this mess
         Log.info("starting iteration");
@@ -135,10 +136,10 @@ public class OnMultiBlockCraft implements Listener {
             Log.info("iterating");
             if (item != null && afterTotal.containsKey(item)) {
                 if (afterTotal.get(item).equals(beforeTotal.get(item))) {
-                    beforeTotal.remove(item);
+                    deltaMap.remove(item);
                 } else {
                     int delta = afterTotal.get(item) - beforeTotal.get(item);
-                    Log.info(item.toString() + " " + delta);
+                    Log.info(item + " " + delta);
                     if (delta > 0) {
                         Collection<Task> activeTasks = TaskStorage.getActiveTasks(uuid);
                         for (Task task : activeTasks) {
@@ -155,7 +156,7 @@ public class OnMultiBlockCraft implements Listener {
             }
         }
 
-        Log.info(before.toString());
+        Log.info(deltaMap.toString());
     }
 
     private Map<ItemStack, Integer> getMappedContents(List<ItemStack> itemStacks) {
