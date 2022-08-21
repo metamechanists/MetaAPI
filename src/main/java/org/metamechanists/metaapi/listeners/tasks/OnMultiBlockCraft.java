@@ -120,11 +120,11 @@ public class OnMultiBlockCraft implements Listener {
         Log.info("3");
 
         // Read the items in the output inventory into a list, let the multiblock do its thing, then read the items again
-        List<ItemStack> before = getItems(block, dispenser, false, player, multiBlock, block);
+        List<ItemStack> before = getItems(block, dispenser, false, null, null, null);
 
         Log.info("before 1: " + before);
 
-        List<ItemStack> after = getItems(block, dispenser, true, null, null, null);
+        List<ItemStack> after = getItems(block, dispenser, true, player, multiBlock, block);
 
         Log.info("4");
 

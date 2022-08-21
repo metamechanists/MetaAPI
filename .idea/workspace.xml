@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" afterDir="false" />
-    </list>
+    <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="" />
     <list id="2c710406-914a-4a20-a7cb-282bb7f1a801" name="Changes by idra" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" afterDir="false" />
     </list>
@@ -27,17 +25,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java">
-      <ranges>
-        <range start1="4" end1="4" start2="4" end2="5" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="80" end1="81" start2="81" end2="82" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="87" end1="87" start2="88" end2="93" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="116" end1="121" start2="122" end2="127" changelist="2c710406-914a-4a20-a7cb-282bb7f1a801" />
-        <range start1="124" end1="126" start2="130" end2="132" changelist="2c710406-914a-4a20-a7cb-282bb7f1a801" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
