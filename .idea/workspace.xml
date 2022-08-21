@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" afterDir="false" />
     </list>
-    <list id="9ee727bb-46d8-47c8-ad30-5e63698c6974" name="Changes by idra" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnPlayerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnPlayerCommand.java" afterDir="false" />
-    </list>
+    <list id="3366a2b1-a468-40d6-ba0d-4a9b8297e6ac" name="Changes by idra" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
