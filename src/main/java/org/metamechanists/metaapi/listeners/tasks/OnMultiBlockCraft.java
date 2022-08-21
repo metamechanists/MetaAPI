@@ -101,7 +101,6 @@ public class OnMultiBlockCraft implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onMultiBlockCraft(MultiBlockInteractEvent event) {
 
-        Log.info("1");
         // Cancel event so Slimefun can't process it
         event.setCancelled(true);
 
@@ -113,43 +112,25 @@ public class OnMultiBlockCraft implements Listener {
         Block possibleDispenser = block.getRelative(BlockFace.DOWN);
         BlockState state = PaperLib.getBlockState(possibleDispenser, false).getState();
 
-        Log.info("2");
-
         // If the block is not a dispenser, we shouldn't attempt to craft anything
         if (!(state instanceof Dispenser dispenser)) {
             return;
         }
 
-        Log.info("3");
-
         // Read the items in the output inventory into a list, let the multiblock do its thing, then read the items again
         List<ItemStack> before = getItems(block, dispenser, true, player, multiBlock, block);
-
-        Log.info("before 1: " + before);
-
         List<ItemStack> after = getItems(block, dispenser, false, null, null, null);
-
-        Log.info("4");
-
-        Log.info("before 2: " + before);
-        Log.info("after: " + after);
 
         // Remove all the items from the list that were already there before
         Map<ItemStack, Integer> beforeTotal = getMappedContents(before);
         Map<ItemStack, Integer> afterTotal = getMappedContents(after);
-        Map<ItemStack, Integer> deltaMap = new HashMap<>(beforeTotal);
 
         // TODO finish this mess
-        Log.info("starting iteration");
         for (ItemStack item : beforeTotal.keySet()) {
-            Log.info("iterating");
             if (afterTotal.containsKey(item)) {
-                if (afterTotal.get(item).equals(beforeTotal.get(item))) {
-                    deltaMap.remove(item);
-                } else {
+                if (!afterTotal.get(item).equals(beforeTotal.get(item))) {
                     int delta = afterTotal.get(item) - beforeTotal.get(item);
                     Log.info(item + " " + delta);
-                    deltaMap.put(item, delta);
                     if (delta > 0) {
                         Collection<Task> activeTasks = TaskStorage.getActiveTasks(uuid);
                         for (Task task : activeTasks) {
@@ -161,14 +142,10 @@ public class OnMultiBlockCraft implements Listener {
                                 }
                             }
                         }
-                    } else {
-                        deltaMap.remove(item);
                     }
                 }
             }
         }
-
-        Log.info(deltaMap.toString());
     }
 
     private Map<ItemStack, Integer> getMappedContents(List<ItemStack> itemStacks) {

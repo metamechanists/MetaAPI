@@ -213,10 +213,12 @@ public class TaskStorage {
     }
 
     public static void updateProgress(String completer, Task task, Requirement requirement, int progress) {
+        Log.info("update called");
         // Get a list of requirements, check that the list contains the given requirement, calculate the new progress, then set the new progress
         List<Requirement> list = Arrays.asList(task.getRequirements());
         String key = String.valueOf(list.indexOf(requirement));
         int newProgress = getProgress(completer, task, requirement) + progress;
+        Log.info("set Progress to be " + newProgress);
         Objects.requireNonNull(getRequirementConfig(completer, task)).set(key, newProgress);
 
         // Now that a requirement has been updated, check if all requirements are complete

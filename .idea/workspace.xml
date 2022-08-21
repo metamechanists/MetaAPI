@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="" />
+    <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnBlockInteract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnBlockInteract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" afterDir="false" />
+    </list>
     <list id="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" name="Changes by idra" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnBlockInteract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnBlockInteract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +31,33 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java">
+      <ranges>
+        <range start1="103" end1="104" start2="103" end2="103" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+        <range start1="114" end1="116" start2="113" end2="113" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+        <range start1="121" end1="123" start2="118" end2="118" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+        <range start1="126" end1="129" start2="121" end2="121" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+        <range start1="130" end1="135" start2="122" end2="122" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+        <range start1="139" end1="140" start2="126" end2="126" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="142" end1="143" start2="128" end2="128" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+        <range start1="144" end1="145" start2="129" end2="129" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+        <range start1="146" end1="149" start2="130" end2="131" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="151" end1="152" start2="133" end2="133" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="163" end1="165" start2="144" end2="144" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="169" end1="171" start2="148" end2="148" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnBlockInteract.java">
+      <ranges>
+        <range start1="16" end1="16" start2="16" end2="17" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="22" end1="23" start2="23" end2="24" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="33" end1="33" start2="34" end2="35" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+        <range start1="36" end1="36" start2="38" end2="39" changelist="ddfe51a8-60a8-4354-8aaf-1ef8edb67a0b" />
+        <range start1="42" end1="43" start2="45" end2="46" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
