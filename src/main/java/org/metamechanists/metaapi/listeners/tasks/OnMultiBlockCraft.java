@@ -27,7 +27,6 @@ import org.metamechanists.metaapi.util.Log;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -84,7 +83,11 @@ public class OnMultiBlockCraft implements Listener {
         Inventory[] inventories = findOutputInventories(block, dispenser);
         List<ItemStack> items = new ArrayList<>();
         for (Inventory inventory : inventories) {
-            items.addAll(Arrays.asList(inventory.getContents()));
+            for (ItemStack itemStack : inventory.getContents()) {
+                if (itemStack != null) {
+                    items.add(itemStack);
+                }
+            }
         }
         if (complete) {
             multiBlock.getSlimefunItem().callItemHandler(
@@ -121,8 +124,8 @@ public class OnMultiBlockCraft implements Listener {
 
         // Read the items in the output inventory into a list, let the multiblock do its thing, then read the items again
         List<ItemStack> beforeBroken = getItems(block, dispenser, false, null, null, null);
-
         List<ItemStack> before = List.copyOf(beforeBroken);
+
         Log.info("beforeBroken 1: " + beforeBroken);
         Log.info("before 1: " + before);
 
@@ -137,7 +140,7 @@ public class OnMultiBlockCraft implements Listener {
         // Remove all the items from the list that were already there before
         Map<ItemStack, Integer> beforeTotal = getMappedContents(before);
         Map<ItemStack, Integer> afterTotal = getMappedContents(after);
-        Map<ItemStack, Integer> deltaMap = new HashMap<>(Map.copyOf(beforeTotal));
+        Map<ItemStack, Integer> deltaMap = new HashMap<>(beforeTotal);
 
         // TODO finish this mess
         Log.info("starting iteration");
