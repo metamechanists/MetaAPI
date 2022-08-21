@@ -79,23 +79,46 @@ public class TaskStorage {
         return getNestedConfiguration(Objects.requireNonNull(getTaskConfig(completer, task)), "requirements");
     }
 
-    public static List<Task> getActiveTasks(String completer) {
+    public static List<Task> getTasks(String completer, Boolean complete) {
         //Get Important Variables
-        List<Task> activeTasks = new ArrayList<>();
-        ConfigurationSection playerConfig = getCompleterConfig(completer);
+        List<Task> returnTasks = new ArrayList<>();
+        ConfigurationSection completerConfig = getCompleterConfig(completer);
 
         // Loop through every task
-        for (String taskId : playerConfig.getKeys(false)) {
+        for (String taskId : completerConfig.getKeys(false)) {
 
-            // Check A - that the master task list contains the taskID B - that the task is not complete
-            if (Tasks.getTasks().containsKey(taskId) && !isTaskComplete(completer, Tasks.getTasks().get(taskId))) {
+            // Check that the master task list contains the taskID
+            if (Tasks.getTasks().containsKey(taskId)) {
 
-                // If so, add it to the list of active tasks
-                activeTasks.add(Tasks.getTasks().get(taskId));
+                // If complete isn't null, we should check if the task is completed/not completed according to the argument 'complete'
+                if (complete != null) {
+                    if (isTaskComplete(completer, Tasks.getTasks().get(taskId)) == complete) {
+                        returnTasks.add(Tasks.getTasks().get(taskId));
+                    }
+                    continue;
+                }
+
+                // If complete is null, we don't need to check anything - just push the task straight onto the list
+                returnTasks.add(Tasks.getTasks().get(taskId));
             }
         }
 
-        return activeTasks;
+        return returnTasks;
+    }
+
+    public static List<Task> getAllTasks(String completer) {
+        // Return all Tasks (that the player has unlocked)
+        return getTasks(completer, null);
+    }
+
+    public static List<Task> getActiveTasks(String completer) {
+        //Return all incomplete Tasks (that the player has unlocked)
+        return getTasks(completer, false);
+    }
+
+    public static List<Task> getCompletedTasks(String completer) {
+        //Return all Completed Task (that the player has unlocked)
+        return getTasks(completer, true);
     }
 
     public static void checkTask(String completer, Method toCall, Object callFrom, Object...args) {
