@@ -13,6 +13,7 @@ import org.metamechanists.metaapi.listeners.tasks.OnMultiBlockCraft;
 import org.metamechanists.metaapi.listeners.tasks.OnPlayerCommand;
 import org.metamechanists.metaapi.listeners.tasks.OnPlayerCraft;
 import org.metamechanists.metaapi.listeners.tasks.OnPlayerJoin;
+import org.metamechanists.metaapi.runnables.PlaytimeChecker;
 import org.metamechanists.metaapi.util.Log;
 import org.metamechanists.metaapi.util.PluginStorage;
 import org.metamechanists.metaapi.util.TextUtil;
@@ -45,5 +46,8 @@ public class MetaAPI extends JavaPlugin {
         manager.registerEvents(new OnPlayerCommand(), instance);
         manager.registerEvents(new OnPlayerCraft(), instance);
         manager.registerEvents(new OnPlayerJoin(), instance);
+
+        PlaytimeChecker playtimeChecker = new PlaytimeChecker();
+        playtimeChecker.runTaskTimer(instance, 1, ResourceLoader.getConfig().getInt("playtime-timer", 60) * 20L);
     }
 }
