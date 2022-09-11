@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 import org.metamechanists.metaapi.implementation.tasks.Requirement;
 import org.metamechanists.metaapi.implementation.tasks.Task;
 import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
-import org.metamechanists.metaapi.implementation.tasks.requirements.Craft;
+import org.metamechanists.metaapi.implementation.tasks.requirements.MachineCraft;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,7 +32,7 @@ public class OnMachineCraft implements Listener {
     public static void checkRequirement(String completer, Task task, Requirement requirement, ItemStack result) {
 
         // Check if the requirement is relevant to this listener
-        if (requirement instanceof Craft craft) {
+        if (requirement instanceof MachineCraft craft) {
 
             //Get the Requirement Stack to Check With
             ItemStack requirementItem = craft.getItem().clone();
@@ -75,8 +75,14 @@ public class OnMachineCraft implements Listener {
             return;
         }
 
+        ItemStack craftedItem = inventory.getItem(machineOutputs.get(machineInventories.get(title)));
+
         // Check player task
         TaskStorage.checkTask(uuid, this.getClass().getMethod(
-                "checkRequirement", String.class, Task.class, Requirement.class, ItemStack.class), this, inventory.getItem(machineOutputs.get(machineInventories.get(title))));
+                "checkRequirement", String.class, Task.class, Requirement.class, ItemStack.class), this, craftedItem);
+
+        // Check server task
+        TaskStorage.checkTask(TaskStorage.SERVER_TASK_KEY, this.getClass().getMethod(
+                "checkRequirement", String.class, Task.class, Requirement.class, ItemStack.class), this, craftedItem);
     }
 }
