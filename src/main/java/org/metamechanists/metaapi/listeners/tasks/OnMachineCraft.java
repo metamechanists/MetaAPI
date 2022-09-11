@@ -1,6 +1,7 @@
 package org.metamechanists.metaapi.listeners.tasks;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.common.ChatColors;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,8 +25,8 @@ public class OnMachineCraft implements Listener {
     private static Map<Integer, Integer> machineOutputs = new HashMap<>();
 
     public static void fillMap() {
-        machineInventories.put("Example", 0);
-        machineOutputs.put(0, 19);
+        machineInventories.put(ChatColors.color("&6Infinity Workbench"), 16);
+        machineOutputs.put(16, 43);
     }
 
     public static void checkRequirement(String completer, Task task, Requirement requirement, ItemStack result) {
