@@ -6,8 +6,11 @@ import io.github.thebusybiscuit.slimefun4.core.handlers.MultiBlockInteractionHan
 import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlock;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.OutputChest;
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
+
 import lombok.SneakyThrows;
+
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
+
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.BlockState;
@@ -19,6 +22,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+
 import org.metamechanists.metaapi.implementation.tasks.Requirement;
 import org.metamechanists.metaapi.implementation.tasks.Task;
 import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
@@ -125,7 +129,7 @@ public class OnMultiBlockCraft implements Listener {
         Map<ItemStack, Integer> beforeTotal = getMappedContents(before);
         Map<ItemStack, Integer> afterTotal = getMappedContents(after);
 
-        // TODO finish this mess
+        // TODO refactor this mess
         for (ItemStack item : beforeTotal.keySet()) {
             if (afterTotal.containsKey(item)) {
                 if (!afterTotal.get(item).equals(beforeTotal.get(item))) {

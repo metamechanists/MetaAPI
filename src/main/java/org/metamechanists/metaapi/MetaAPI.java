@@ -47,7 +47,9 @@ public class MetaAPI extends JavaPlugin {
         manager.registerEvents(new OnPlayerCommand(), instance);
         manager.registerEvents(new OnPlayerCraft(), instance);
         manager.registerEvents(new OnPlayerJoin(), instance);
-        manager.registerEvents(new OnMachineCraft(), instance);
+        OnMachineCraft onMachineCraft = new OnMachineCraft();
+        OnMachineCraft.fillMap();
+        manager.registerEvents(onMachineCraft, instance);
 
         PlaytimeChecker playtimeChecker = new PlaytimeChecker();
         playtimeChecker.runTaskTimer(instance, 1, ResourceLoader.getConfig().getInt("playtime-timer", 60) * 20L);

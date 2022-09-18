@@ -5,23 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c4c83df-2bb3-4147-9c5e-20229a863939" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/database/DataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/database/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/TaskLines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/Tasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/Tasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMachineCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMachineCraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/util/TextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/util/TextUtil.java" afterDir="false" />
     </list>
-    <list id="e0cf691b-d375-40a4-9603-b07ceadd83b5" name="Changes by JustAHuman" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/TaskLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/config/ConfigUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/config/ConfigUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/Tasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/Tasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/Task.java" afterDir="false" />
-    </list>
-    <list id="14949804-0a1b-455d-9642-f4d490b58754" name="Changes by Sfiguz7" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/database/DatabaseSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list id="32ec73c5-c5d4-4dd7-aaac-8100b78e6885" name="Changes by Sfiguz7" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,19 +33,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/Tasks.java">
+    <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/listeners/tasks/OnMultiBlockCraft.java">
       <ranges>
-        <range start1="3" end1="5" start2="3" end2="3" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="6" end1="6" start2="4" end2="5" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="16" end1="17" start2="15" end2="18" changelist="e0cf691b-d375-40a4-9603-b07ceadd83b5" />
-        <range start1="19" end1="22" start2="20" end2="28" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/org/metamechanists/metaapi/implementation/tasks/Task.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="7" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
-        <range start1="11" end1="11" start2="15" end2="16" changelist="e0cf691b-d375-40a4-9603-b07ceadd83b5" />
-        <range start1="22" end1="22" start2="27" end2="36" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="8" end1="8" start2="8" end2="9" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="9" end1="9" start2="10" end2="11" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="10" end1="10" start2="12" end2="13" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="21" end1="21" start2="24" end2="25" changelist="1c4c83df-2bb3-4147-9c5e-20229a863939" />
+        <range start1="127" end1="128" start2="131" end2="132" changelist="32ec73c5-c5d4-4dd7-aaac-8100b78e6885" />
       </ranges>
     </file>
   </component>
