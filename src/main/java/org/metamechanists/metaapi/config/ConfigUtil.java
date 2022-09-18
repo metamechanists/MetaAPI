@@ -21,7 +21,7 @@ public class ConfigUtil {
         return value;
     }
 
-    public static int getInt(ConfigurationSection section, String key) {
+    public static int getInt( ConfigurationSection section, String key) {
         // No null check because int cannot be null, and 0 could be a valid parameter
         return section.getInt(key);
     }

@@ -4,6 +4,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.metamechanists.metaapi.MetaAPI;
+import org.metamechanists.metaapi.implementation.TaskLines;
 import org.metamechanists.metaapi.implementation.Tasks;
 import org.metamechanists.metaapi.implementation.tasks.completers.PlayerCompleter;
 import org.metamechanists.metaapi.util.Log;
@@ -245,14 +246,17 @@ public class TaskStorage {
         }
     }
 
-    public static void addRootTaskIfMissing(String completer) {
+    public static void addRootTasksIfMissing(String completer) {
         // Get all the unlocked tasks
         Collection<Task> tasks = getAllTasks(completer);
 
-        // Ensure that the player has the root task, if not add it
-        if (!tasks.contains(Tasks.getRootTask()) && !tasks.contains(Tasks.getRootTask())) {
-            addTask(completer, Tasks.getRootTask());
-            completeTask(completer, Tasks.getRootTask());
+        // For every taskline
+        for (TaskLine taskLine : TaskLines.getTaskLines().values()) {
+            // Ensure that the player has the root task, if not add it
+            if (!tasks.contains(taskLine.getRoot())) {
+                addTask(completer, taskLine.getRoot());
+                completeTask(completer, taskLine.getRoot());
+            }
         }
 
         // Check if any new tasks should be unlocked

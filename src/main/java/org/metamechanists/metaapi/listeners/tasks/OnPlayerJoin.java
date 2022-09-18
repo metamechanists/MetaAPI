@@ -16,10 +16,10 @@ public class OnPlayerJoin implements Listener {
         String uuid = player.getUniqueId().toString();
 
         //If the Player or the Server is Missing the Root Task, Add it
-        TaskStorage.addRootTaskIfMissing(uuid);
+        TaskStorage.addRootTasksIfMissing(uuid);
 
         // Check this here instead of in an initialization function because we need MetaCore or another API user to load first
         // If another API user doesn't load first, there will be no root task to check
-        TaskStorage.addRootTaskIfMissing(TaskStorage.SERVER_TASK_KEY);
+        TaskStorage.addRootTasksIfMissing(TaskStorage.SERVER_TASK_KEY);
     }
 }
