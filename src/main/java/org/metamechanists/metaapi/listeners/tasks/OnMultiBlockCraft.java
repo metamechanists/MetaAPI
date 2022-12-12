@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2022 Idra - All Rights Reserved
+ */
+
 package org.metamechanists.metaapi.listeners.tasks;
 
 import io.github.thebusybiscuit.slimefun4.api.events.MultiBlockInteractEvent;

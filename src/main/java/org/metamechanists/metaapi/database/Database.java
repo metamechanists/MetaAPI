@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2022 Idra - All Rights Reserved
+ */
+
 package org.metamechanists.metaapi.database;
 
 import org.metamechanists.metaapi.MetaAPI;

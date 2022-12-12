@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2022 Idra - All Rights Reserved
+ */
+
 package org.metamechanists.metaapi.util;
 
 import org.bukkit.entity.Player;
