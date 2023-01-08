@@ -14,12 +14,12 @@ import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
 public class OnPlayerJoin implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
-    public void onPlayerJoin(PlayerJoinEvent event) {
+    public void onPlayerJoin(final PlayerJoinEvent event) {
         // Get important variables
-        Player player = event.getPlayer();
-        String uuid = player.getUniqueId().toString();
+        final Player player = event.getPlayer();
+        final String uuid = player.getUniqueId().toString();
 
-        //If the Player or the Server is Missing the Root Task, Add it
+        // If the player or the server is missing the root task, add said root task
         TaskStorage.addRootTasksIfMissing(uuid);
 
         // Check this here instead of in an initialization function because we need MetaCore or another API user to load first

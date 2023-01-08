@@ -5,6 +5,7 @@
 package org.metamechanists.metaapi.database;
 
 import org.metamechanists.metaapi.MetaAPI;
+import org.metamechanists.metaapi.util.Log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,7 +18,6 @@ import java.util.logging.Logger;
 public class Database {
 
     private static final javax.sql.DataSource source = DataSource.getDataSource();
-    private static final Logger logger = MetaAPI.getInstance().getLogger();
 
     public static void createTables() {
         try (Connection conn = source.getConnection()) {
@@ -29,7 +29,8 @@ public class Database {
             );
             statement.execute();
         } catch (SQLException e) {
-            logger.log(Level.SEVERE, "Could not initialise database table: resource_vaults.", e);
+            Log.tableInitialiseError("");
+            e.printStackTrace();
         }
         try (Connection conn = source.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(

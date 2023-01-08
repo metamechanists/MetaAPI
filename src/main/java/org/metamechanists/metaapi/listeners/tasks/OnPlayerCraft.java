@@ -21,29 +21,23 @@ import java.util.List;
 
 public class OnPlayerCraft implements Listener {
 
-    public static void checkRequirement(String completer, Task task, Requirement requirement, ItemStack result) {
+    public static void checkRequirement(final String completer, final Task task, final Requirement requirement, final ItemStack result) {
 
         // Check if the requirement is relevant to this listener
         if (requirement instanceof Craft craft) {
 
-            //Get the Requirement Stack to Check With
             ItemStack requirementItem = craft.getItem().clone();
-            requirementItem.setAmount(1);
-
-            //Get the Result Stack to Check With
             ItemStack resultItem = result.clone();
+
+            // Allows us to directly compare both ItemStacks
+            requirementItem.setAmount(1);
             resultItem.setAmount(1);
 
-            //Is the Required Item a Slimefun Item
             boolean isRequirementSlimefunItem = (SlimefunItem.getByItem(resultItem) != null);
-            //If Both are Vanilla Items and Equal
-            boolean vanillaPassed = (!isRequirementSlimefunItem && requirementItem == resultItem);
-            //If Both are Slimefun Items and Equal
-            boolean slimefunPassed = isRequirementSlimefunItem && SlimefunItem.getByItem(resultItem) == SlimefunItem.getByItem(requirementItem);
+            boolean bothVanillaAndTheSame = (!isRequirementSlimefunItem && requirementItem == resultItem);
+            boolean bothSlimefunAndTheSame = isRequirementSlimefunItem && SlimefunItem.getByItem(resultItem) == SlimefunItem.getByItem(requirementItem);
 
-            if (vanillaPassed || slimefunPassed) {
-
-                // Increment the objective
+            if (bothVanillaAndTheSame || bothSlimefunAndTheSame) {
                 TaskStorage.updateProgress(completer, task, requirement, result.getAmount());
             }
         }
@@ -51,17 +45,17 @@ public class OnPlayerCraft implements Listener {
 
 
     @EventHandler(priority = EventPriority.HIGHEST)
-    public void onCraft(CraftItemEvent event) throws NoSuchMethodException {
-        //Get Important Variables
-        List<HumanEntity> players = event.getViewers();
-        ItemStack result = event.getInventory().getResult();
+    public void onCraft(final CraftItemEvent event) throws NoSuchMethodException {
+        // Get important variables
+        final List<HumanEntity> players = event.getViewers();
+        final ItemStack result = event.getInventory().getResult();
 
-        // Check if each active task involves this event
+        // For each online player
         for (HumanEntity entity : players) {
-            Player player = (Player) entity;
-            String uuid = player.getUniqueId().toString();
+            final Player player = (Player) entity;
+            final String uuid = player.getUniqueId().toString();
 
-            // Check player task
+            // Check if any of the active tasks for said player involve this event
             TaskStorage.checkTask(uuid, this.getClass().getMethod(
                     "checkRequirement", String.class, Task.class, Requirement.class, ItemStack.class), this, result);
         }

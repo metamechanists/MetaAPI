@@ -55,6 +55,7 @@ public class TextUtil {
             // Get Important Variables
             String replace = placeholderInfo.getKey();
             Object replaceWith = placeholderInfo.getValue();
+
             // Go Through Each Type an Auto Fill Can Be :D
             if (replaceWith instanceof Player player) {
                 filledMessage = filledMessage.replace("{" + replace + "}", player.getName());

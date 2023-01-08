@@ -21,10 +21,10 @@ public class PlaytimeChecker extends BukkitRunnable {
         // Check if the requirement is relevant to this listener
         if (requirement instanceof Playtime playtime) {
 
-            //Get the Required time
+            // Get the Required time
             int requiredTime = playtime.getTimeNeeded();
 
-            //Check if the Player has enough Playtime
+            // Check if the Player has enough Playtime
             if (timePlayed >= requiredTime) {
 
                 // Increment the objective
@@ -37,11 +37,11 @@ public class PlaytimeChecker extends BukkitRunnable {
     public void run() {
         for (World world : Bukkit.getWorlds()) {
             for (Player player : world.getPlayers()) {
-                //Get Important Variables
+                // Get Important Variables
                 String uuid = player.getUniqueId().toString();
                 int timePlayed = player.getStatistic(Statistic.PLAY_ONE_MINUTE) / 20;
 
-                //Check Player Task
+                // Check Player Task
                 try {
                     TaskStorage.checkTask(uuid, this.getClass().getMethod(
                             "checkRequirement", String.class, Task.class, Requirement.class, int.class), this, timePlayed);

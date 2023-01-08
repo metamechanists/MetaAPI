@@ -25,8 +25,8 @@ import java.util.Map;
 
 public class OnMachineCraft implements Listener {
 
-    private static Map<String, Integer> machineInventories = new HashMap<>();
-    private static Map<Integer, Integer> machineOutputs = new HashMap<>();
+    private static final Map<String, Integer> machineInventories = new HashMap<>();
+    private static final Map<Integer, Integer> machineOutputs = new HashMap<>();
 
     public static void fillMap() {
         machineInventories.put(ChatColors.color("&6Infinity Workbench"), 16);
@@ -62,24 +62,27 @@ public class OnMachineCraft implements Listener {
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
-    public void onInventoryClick(InventoryClickEvent e) throws NoSuchMethodException {
-        HumanEntity humanEntity = e.getWhoClicked();
-        Inventory inventory = e.getClickedInventory();
-        InventoryView inventoryView = e.getView();
+    public void onInventoryClick(final InventoryClickEvent e) throws NoSuchMethodException {
+        // Get important variables
+        final HumanEntity humanEntity = e.getWhoClicked();
+        final Inventory inventory = e.getClickedInventory();
+        final InventoryView inventoryView = e.getView();
 
+        // If entity is not a player or the inventory does not exist
         if (!(humanEntity instanceof Player player && inventory != null)) {
             return;
         }
 
         int slot = e.getSlot();
-        String uuid = player.getUniqueId().toString();
-        String title = inventoryView.getTitle();
+        final String uuid = player.getUniqueId().toString();
+        final String title = inventoryView.getTitle();
 
+        // If the inventory is not a machine inventory or TODO figure out wtf this does
         if (!(machineInventories.containsKey(title) && machineInventories.get(title) == slot)) {
             return;
         }
 
-        ItemStack craftedItem = inventory.getItem(machineOutputs.get(machineInventories.get(title)));
+        final ItemStack craftedItem = inventory.getItem(machineOutputs.get(machineInventories.get(title)));
 
         // Check player task
         TaskStorage.checkTask(uuid, this.getClass().getMethod(

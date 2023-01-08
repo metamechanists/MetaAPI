@@ -7,8 +7,6 @@ package org.metamechanists.metaapi;
 import lombok.Getter;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import org.metamechanists.metaapi.config.Config;
 import org.metamechanists.metaapi.config.ResourceLoader;
 import org.metamechanists.metaapi.implementation.tasks.TaskStorage;
 import org.metamechanists.metaapi.listeners.tasks.OnBlockInteract;
@@ -29,13 +27,14 @@ public class MetaAPI extends JavaPlugin {
     @Getter
     public static JavaPlugin instance;
 
+    private final static int
+
     public static void initialize(JavaPlugin plugin) {
         instance = plugin;
 
         PluginStorage.initialize(instance);
         Log.initialize();
         ResourceLoader.initialize();
-        Config.initialize();
         TextUtil.initialize();
         TaskStorage.initialize();
 
@@ -51,11 +50,13 @@ public class MetaAPI extends JavaPlugin {
         manager.registerEvents(new OnPlayerCommand(), instance);
         manager.registerEvents(new OnPlayerCraft(), instance);
         manager.registerEvents(new OnPlayerJoin(), instance);
+
+
         OnMachineCraft onMachineCraft = new OnMachineCraft();
         OnMachineCraft.fillMap();
         manager.registerEvents(onMachineCraft, instance);
 
         PlaytimeChecker playtimeChecker = new PlaytimeChecker();
-        playtimeChecker.runTaskTimer(instance, 1, ResourceLoader.getConfig().getInt("playtime-timer", 60) * 20L);
+        playtimeChecker.runTaskTimer(instance, 1, 60 * 20L);
     }
 }

@@ -8,8 +8,6 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.jetbrains.annotations.Nullable;
 import org.metamechanists.metaapi.util.Log;
 
-import java.util.List;
-
 
 
 public class ConfigUtil {
@@ -38,10 +36,5 @@ public class ConfigUtil {
         }
 
         return value;
-    }
-
-    public static List<String> getStringList(ConfigurationSection section, String key) {
-        // No length checks for existence of key because an empty list could be a valid parameter
-        return section.getStringList(key);
     }
 }
